@@ -6,13 +6,15 @@ nnoremap <C-f> :NERDTreeFind<CR>
 nnoremap <leader>` :sp<bar> :resize 20<bar> :terminal<Cr>
 let g:NERDTreeIgnore = ['^node_modules$']
 
+
 " If another buffer tries to replace NERDTree, put it in the other window, and bring back NERDTree.
-autocmd BufEnter * if bufname('#') =~ 'NERD_tree_\d\+' && bufname('%') !~ 'NERD_tree_\d\+' && winnr('$') > 1 |
-    \ let buf=bufnr() | buffer# | execute "normal! \<C-W>w" | execute 'buffer'.buf | endif
+autocmd BufEnter * if bufname('#') =~ 'NERD_tree_\d\+' && bufname('%') !~ 'NERD_tree_\d\+' && winnr('$') > 1 | \ let buf=bufnr() | buffer# | execute "normal! \<C-W>w" | execute 'buffer'.buf | endif
 
 let g:NERDTreeGitStatusWithFlags = 1
 
 
+"custom indent
+setlocal indentkeys+=0.
 
 "tab complition configuration
 " use <tab> for trigger completion and navigate to the next complete item
