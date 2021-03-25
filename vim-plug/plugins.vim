@@ -35,6 +35,8 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 	Plug 'ryanoasis/vim-devicons'
 	Plug 'ctrlpvim/ctrlp.vim'
 	Plug 'scrooloose/nerdcommenter'
+	Plug 'vim-airline/vim-airline'
+	Plug 'vimsence/vimsence'
 
 	call plug#end()
 	colorscheme gruvbox
