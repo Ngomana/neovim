@@ -1,26 +1,14 @@
 set number
 syntax on
 set nocompatible
-set encoding=UTF-8
 " Specify a directory for plugins
 " - For Neovim: stdpath('data') . '/plugged'
 " - Avoid using standard Vim directory names like 'plugin'
-
-
-"Testing vim buffer
-let g:bufferline_solo_highlight = 0
- let g:bufferline_active_highlight = 'StatusLine'
-
-  let g:bufferline_fname_mod = ':t'
-
-
 call plug#begin('~/.vim/plugged')
 "Nerd Tree file icons
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'ryanoasis/vim-devicons'
 
-"T mux navigator
-Plug 'christoomey/vim-tmux-navigator'
 "syntax highlighting 
 Plug 'sheerun/vim-polyglot'
 Plug 'kevinoid/vim-jsonc'
@@ -123,9 +111,6 @@ let g:prettier#config#print_width = 'auto'
 " default: 'auto'
 let g:prettier#config#tab_width = 'auto'
 
-"nerdtree git
-Plug 'Xuyuanp/nerdtree-git-plugin'
-
 " use tabs instead of spaces: true, false, or auto (use the expandtab setting).
 " default: 'auto'
 let g:prettier#config#use_tabs = 'auto'
@@ -171,47 +156,3 @@ inoremap <silent><expr> <Tab>
       \ pumvisible() ? "\<C-n>" :
       \ <SID>check_back_space() ? "\<Tab>" :
       \ coc#refresh()
-
-
-
-
-
-"Nerdtree short cuts
-nnoremap <leader>b :NERDTreeFocus<CR>
-nnoremap <C-b> :NERDTree<CR>
-nnoremap <C-t> :NERDTreeToggle<CR>
-nnoremap <C-f> :NERDTreeFind<CR>
-
-
-"Nerd Tree bull shit
-" you can add these colors to your .vimrc to help customizing
-let s:brown = "905532"
-let s:aqua =  "3AFFDB"
-let s:blue = "689FB6"
-let s:darkBlue = "44788E"
-let s:purple = "834F79"
-let s:lightPurple = "834F79"
-let s:red = "AE403F"
-let s:beige = "F5C06F"
-let s:yellow = "F09F17"
-let s:orange = "D4843E"
-let s:darkOrange = "F16529"
-let s:pink = "CB6F6F"
-let s:salmon = "EE6E73"
-let s:green = "8FAA54"
-let s:lightGreen = "31B53E"
-let s:white = "FFFFFF"
-let s:rspec_red = 'FE405F'
-let s:git_orange = 'F54D27'
-
-let g:NERDTreeExtensionHighlightColor = {} " this line is needed to avoid error
-let g:NERDTreeExtensionHighlightColor['css'] = s:blue " sets the color of css files to blue
-
-let g:NERDTreeExactMatchHighlightColor = {} " this line is needed to avoid error
-let g:NERDTreeExactMatchHighlightColor['.gitignore'] = s:git_orange " sets the color for .gitignore files
-
-let g:NERDTreePatternMatchHighlightColor = {} " this line is needed to avoid error
-let g:NERDTreePatternMatchHighlightColor['.*_spec\.rb$'] = s:rspec_red " sets the color for files ending with _spec.rb
-
-let g:WebDevIconsDefaultFolderSymbolColor = s:beige " sets the color for folders that did not match any rule
-let g:WebDevIconsDefaultFileSymbolColor = s:blue " sets the color for files that did not match any rule
