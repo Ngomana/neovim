@@ -1,0 +1,12 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =6
+let g:netrw_dirhist_6='/Users/newuser/workspace/programming/desktop/numberz/src/screens/item'
+let g:netrw_dirhist_5='/Users/newuser/workspace/programming/desktop/numberz/src/screens'
+let g:netrw_dirhist_4='/Users/newuser/workspace/programming/desktop/numberz/src'
+let g:netrw_dirhist_3='/Users/newuser/workspace/programming/desktop/numberz'
+let g:netrw_dirhist_2='/Users/newuser/workspace/programming/mobile/elastic'
+let g:netrw_dirhist_1='/Users/newuser/workspace/programming/desktop/numberz'
+let g:netrw_dirhist_0='/Users/newuser/workspace/programming/desktop/numberz/src'
+let g:netrw_dirhist_9='/Users/newuser/workspace/programming/desktop/numberz'
+let g:netrw_dirhist_8='/Users/newuser/workspace/programming/web/active-directory-dotnetcore-daemon-v2-master/1-Call-MSGraph/daemon-console'
+let g:netrw_dirhist_7='/Users/newuser/workspace/programming/web/xiquel/poc'
