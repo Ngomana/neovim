@@ -12,11 +12,15 @@
     "markdown"
   ],
   "cSpell.userWords": [
-    "neumorph"
-
+    "Ngomana",
+    "neumorph",
+    "reduxjs"
   ],
   //explorer
 
   "explorer.width": 30,
-  "explorer.icon.enableNerdfont": true
+  "explorer.icon.enableNerdfont": true,
+ "explorer.file.hiddenRules": {
+    "filenames": ["node_modules", ".git"]
+  }
 }

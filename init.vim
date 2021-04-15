@@ -53,8 +53,6 @@ Plug 'junegunn/fzf', { 'dir': '~/fzf', 'do': './install --all' }
 " Unmanaged plugin (manually installed and updated)
 Plug '~/my-prototype-plugin'
 
-"buffers
-Plug 'bling/vim-bufferline'
 
 "Local search
 Plug 'mox-mox/vim-localsearch'
@@ -107,7 +105,7 @@ let g:LanguageClient_serverCommands = {
 " Coc explorer
 " We bind it to <leader>e here, feel free to change this
 nmap <leader>e :CocCommand explorer<CR>
-
+inoremap jj <ESC>
 "Git gutter set up
 function! GitStatus()
   let [a,m,r] = GitGutterGetHunkSummary()
@@ -122,7 +120,8 @@ let g:prettier#autoformat_require_pragma = 0
 " textwidth).
 " default: 'auto'
 let g:prettier#config#print_width = 'auto'
-
+"ctrl p ignore node_modules
+let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
 " number of spaces per indentation level: a number or 'auto' (use
 " softtabstop)
 " default: 'auto'
@@ -290,7 +289,8 @@ xmap ic <Plug>(coc-classobj-i)
 omap ic <Plug>(coc-classobj-i)
 xmap ac <Plug>(coc-classobj-a)
 omap ac <Plug>(coc-classobj-a)
-
+inoremap jk <esc>
+inoremap kj <esc>
 " Remap <C-f> and <C-b> for scroll float windows/popups.
 if has('nvim-0.4.0') || has('patch-8.2.0750')
   nnoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>"
