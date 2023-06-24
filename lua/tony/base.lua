@@ -8,11 +8,14 @@ vim.opt.relativenumber = true
 vim.opt.termguicolors = true
 vim.g.mapleader = " "
 
+vim.opt.spell = true
+vim.opt.spelllang = { "en_us" }
+
 vim.keymap.set("n", "<leader>bn", function()
-    vim.cmd("bnext")
+	vim.cmd("bnext")
 end)
 vim.keymap.set("n", "<leader>bp", function()
-    vim.cmd("bprevious")
+	vim.cmd("bprevious")
 end)
 
 vim.cmd("set expandtab")

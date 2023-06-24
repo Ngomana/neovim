@@ -122,6 +122,9 @@ packer.startup(function(use)
 		},
 	})
 
+	-- import cost
+	use("yardnsm/vim-import-cOst")
+
 	-- colorized
 	use("norcalli/nvim-colorizer.lua")
 	use({

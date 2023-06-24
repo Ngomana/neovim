@@ -74,11 +74,6 @@ end
 time([[try_loadstring definition]], false)
 time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
-  ["Comment.nvim"] = {
-    loaded = true,
-    path = "/Users/Tony/.local/share/nvim/site/pack/packer/start/Comment.nvim",
-    url = "https://github.com/numToStr/Comment.nvim"
-  },
   LuaSnip = {
     loaded = true,
     path = "/Users/Tony/.local/share/nvim/site/pack/packer/start/LuaSnip",
@@ -118,6 +113,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/Tony/.local/share/nvim/site/pack/packer/start/gitsigns.nvim",
     url = "https://github.com/lewis6991/gitsigns.nvim"
+  },
+  ["import-cost.nvim"] = {
+    loaded = true,
+    path = "/Users/Tony/.local/share/nvim/site/pack/packer/start/import-cost.nvim",
+    url = "https://github.com/barrett-ruth/import-cost.nvim"
   },
   ["indent-blankline.nvim"] = {
     loaded = true,
@@ -166,6 +166,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/Tony/.local/share/nvim/site/pack/packer/start/neosolarized.nvim",
     url = "https://github.com/svrana/neosolarized.nvim"
+  },
+  nerdcommenter = {
+    loaded = true,
+    path = "/Users/Tony/.local/share/nvim/site/pack/packer/start/nerdcommenter",
+    url = "https://github.com/preservim/nerdcommenter"
   },
   ["null-ls.nvim"] = {
     loaded = true,
@@ -216,11 +221,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/Tony/.local/share/nvim/site/pack/packer/start/nvim-ts-autotag",
     url = "https://github.com/windwp/nvim-ts-autotag"
-  },
-  ["nvim-ts-context-commentstring"] = {
-    loaded = true,
-    path = "/Users/Tony/.local/share/nvim/site/pack/packer/start/nvim-ts-context-commentstring",
-    url = "https://github.com/JoosepAlviste/nvim-ts-context-commentstring"
   },
   ["nvim-web-devicons"] = {
     loaded = true,
