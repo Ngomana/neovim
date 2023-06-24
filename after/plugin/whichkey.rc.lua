@@ -1,7 +1,4 @@
 local wk = require('which-key')
---wk.register(mappings, opts, {prefix = '<leader>'})
-
--- method 2
 wk.register({
   ["<leader>"] = {
     f = {

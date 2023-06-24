@@ -1,0 +1,18 @@
+{
+    "workspace.library": [
+        "/Users/Tony/.config/nvim",
+        "/Users/Tony/.local/share/nvim/site",
+        "/Users/Tony/.local/share/nvim/site/pack/packer/start/lualine.nvim",
+        "/Users/Tony/.local/share/nvim/site/pack/packer/start/mason.nvim",
+        "/Users/Tony/.local/share/nvim/site/pack/packer/start/neosolarized.nvim",
+        "/Users/Tony/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
+        "/Users/Tony/.local/share/nvim/site/pack/packer/start/packer.nvim",
+        "/Users/Tony/.local/share/nvim/site/pack/packer/start/vim-fugitive",
+        "/usr/local/Cellar/neovim/0.8.3/share/nvim/runtime",
+        "/usr/local/Cellar/neovim/0.8.3/share/nvim/runtime/pack/dist/opt/matchit",
+        "/usr/local/Cellar/neovim/0.8.3/lib/nvim",
+        "/Users/Tony/.config/nvim/after",
+        "${3rd}/luassert/library"
+    ],
+    "workspace.checkThirdParty": false
+}
