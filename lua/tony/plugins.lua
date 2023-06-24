@@ -1,100 +1,103 @@
-local status, packer = pcall(require, 'packer')
-if (not status) then
-    print('Packer is not installed')
-    return
+local status, packer = pcall(require, "packer")
+if not status then
+	print("Packer is not installed")
+	return
 end
 
-vim.cmd [[packadd packer.nvim]]
+vim.cmd([[packadd packer.nvim]])
 require("mason").setup()
 require("mason-lspconfig").setup()
 
 packer.startup(function(use)
-    --packer base configuration
-    use 'wbthomason/packer.nvim'
-    use { 'svrana/neosolarized.nvim' }
-    use 'tjdevries/colorbuddy.nvim'
+	--packer base configuration
+	use("wbthomason/packer.nvim")
+	use({ "svrana/neosolarized.nvim" })
+	use("tjdevries/colorbuddy.nvim")
 
-    --new configuration 2023, final
-    --lua line
-    use 'nvim-lualine/lualine.nvim'
+	--lsp saga
+	use({
+		"glepnir/lspsaga.nvim",
+		opt = true,
+		branch = "main",
+		event = "LspAttach",
+		config = function()
+			require("lspsaga").setup({})
+		end,
+		requires = {
+			{ "nvim-tree/nvim-web-devicons" },
+			--Please make sure you install markdown and markdown_inline parser
+			{ "nvim-treesitter/nvim-treesitter" },
+		},
+	})
 
-    -- telescope 
-    	use({
-		"nvim-telescope/telescope.nvim"})
+	--new configuration 2023, final
+	--lua line
+	use("nvim-lualine/lualine.nvim")
 
+	-- telescope
+	use({
+		"nvim-telescope/telescope.nvim",
+	})
 
-    -- vim fugitive
-    use 'tpope/vim-fugitive'
+	-- vim fugitive
+	use("tpope/vim-fugitive")
 
-    -- masson server manager
-    use {
-        "williamboman/mason.nvim",
-        run = ":MasonUpdate" -- :MasonUpdate updates registry contents
-    }
+	-- masson server manager
+	use({
+		"williamboman/mason.nvim",
+		run = ":MasonUpdate", -- :MasonUpdate updates registry contents
+	})
 
-    use({
-        "williamboman/mason-lspconfig.nvim",
-    })
+	use({
+		"williamboman/mason-lspconfig.nvim",
+	})
 
-    -- lsp config
-    use 'neovim/nvim-lspconfig'
+	-- lsp config
+	use("neovim/nvim-lspconfig")
 
-    -- lsp saga 
-        use({
-    "glepnir/lspsaga.nvim",
-    opt = true,
-    branch = "main",
-    event = "LspAttach",
-    config = function()
-        require("lspsaga").setup({})
-    end,
-    requires = {
-        {"nvim-tree/nvim-web-devicons"},
-        --Please make sure you install markdown and markdown_inline parser
-        {"nvim-treesitter/nvim-treesitter"}
-    }
-})
+	-- lsp kind pictograms
+	use("onsails/lspkind.nvim")
 
-    -- lsp kind pictograms
-    use "onsails/lspkind.nvim"
+	-- auto complete tool
+	use("hrsh7th/cmp-nvim-lsp")
+	use("hrsh7th/cmp-buffer")
+	use("hrsh7th/cmp-path")
+	use("hrsh7th/cmp-cmdline")
+	use("hrsh7th/nvim-cmp")
 
-    -- auto complete tool
-    use 'hrsh7th/cmp-nvim-lsp'
-    use 'hrsh7th/cmp-buffer'
-    use 'hrsh7th/cmp-path'
-    use 'hrsh7th/cmp-cmdline'
-    use 'hrsh7th/nvim-cmp'
+	--snippent engine
+	use("L3MON4D3/LuaSnip")
 
-    --snippent engine
-    use 'L3MON4D3/LuaSnip'
+	-- my previous config
+	use("nvim-treesitter/nvim-treesitter", { run = ":TSUpdate" })
+	use("mbbill/undotree")
+	--null ls
+	use("jose-elias-alvarez/null-ls.nvim")
 
-    -- my previous config
-    use("nvim-treesitter/nvim-treesitter", { run = ":TSUpdate" })
-    use("mbbill/undotree")
-    --null ls
-    use("jose-elias-alvarez/null-ls.nvim")
+	-- my previous vim configuration
+	use("https://github.com/altercation/vim-colors-solarized.git")
+	--use("preservim/nerdcommenter")
+	use({ "numToStr/Comment.nvim", requires = {
+		"JoosepAlviste/nvim-ts-context-commentstring",
+	} })
+	use("kyazdani42/nvim-web-devicons")
+	use({ "christoomey/vim-tmux-navigator" })
+	--bufferline
+	use("akinsho/nvim-bufferline.lua")
 
-    -- my previous vim configuration
-    use("https://github.com/altercation/vim-colors-solarized.git")
-    use("preservim/nerdcommenter")
-    use("kyazdani42/nvim-web-devicons")
-    use({ "christoomey/vim-tmux-navigator" })
-    --bufferline
-    use("akinsho/nvim-bufferline.lua")
+	use("nvim-lua/plenary.nvim")
 
-    use("nvim-lua/plenary.nvim")
+	--indetation
+	use("lukas-reineke/indent-blankline.nvim")
 
-    --indetation
-    use("lukas-reineke/indent-blankline.nvim")
+	-- auot pairs, auto opening and closing brackets
+	use({
+		"windwp/nvim-autopairs",
+	})
 
-    -- auot pairs, auto opening and closing brackets
-    use({
-        "windwp/nvim-autopairs",
-    })
+	use("windwp/nvim-ts-autotag")
 
-    use 'windwp/nvim-ts-autotag'
-
-    	--which key
+	--which key
 	use({
 		"folke/which-key.nvim",
 		config = function()
@@ -110,8 +113,9 @@ packer.startup(function(use)
 
 	--git signs
 	use("lewis6991/gitsigns.nvim")
+	use("dinhhuy258/git.nvim") -- For git blame & browse
 
-    	--file broswer
+	--file broswer
 	use({
 		"nvim-tree/nvim-tree.lua",
 		requires = {
@@ -121,10 +125,12 @@ packer.startup(function(use)
 		},
 	})
 
-    -- colorized 
-    use 'norcalli/nvim-colorizer.lua'
-      use({
-    "iamcco/markdown-preview.nvim",
-    run = function() vim.fn["mkdp#util#install"]() end,
-  })
+	-- colorized
+	use("norcalli/nvim-colorizer.lua")
+	use({
+		"iamcco/markdown-preview.nvim",
+		run = function()
+			vim.fn["mkdp#util#install"]()
+		end,
+	})
 end)
