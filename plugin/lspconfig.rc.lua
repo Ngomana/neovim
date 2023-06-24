@@ -42,6 +42,7 @@ nvim_lsp.tsserver.setup({
 
 nvim_lsp.lua_ls.setup({
 	on_attach = on_attach,
+	capabilities = capabilities,
 	settings = {
 		Lua = {
 			runtime = {

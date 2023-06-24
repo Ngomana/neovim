@@ -76,10 +76,7 @@ packer.startup(function(use)
 
 	-- my previous vim configuration
 	use("https://github.com/altercation/vim-colors-solarized.git")
-	--use("preservim/nerdcommenter")
-	use({ "numToStr/Comment.nvim", requires = {
-		"JoosepAlviste/nvim-ts-context-commentstring",
-	} })
+	use("preservim/nerdcommenter")
 	use("kyazdani42/nvim-web-devicons")
 	use({ "christoomey/vim-tmux-navigator" })
 	--bufferline
