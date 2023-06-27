@@ -104,26 +104,34 @@ nvim_lsp.rust_analyzer.setup({
 })
 
 -- sql langauge server
-nvim_lsp.sqlls.setup({
-	on_attach = on_attach,
-	cmd = { "sql-language-server", "up", "--method", "stdio" },
-	filetypes = { "sql", "mysql" },
-	capabilities = capabilities,
-})
+--nvim_lsp.sqlls.setup({
+--on_attach = on_attach,
+--cmd = { "sql-language-server", "up", "--method", "stdio" },
+--filetypes = { "sql", "mysql" },
+--capabilities = capabilities,
+--})
 
 -- vue langauge server
-nvim_lsp.vuels.setup({
-	on_attach = on_attach,
-	cmd = { "vls" },
-	filetypes = { "vue" },
-	capabilities = capabilities,
-})
+--nvim_lsp.vuels.setup({
+--on_attach = on_attach,
+--cmd = { "vls" },
+--filetypes = { "vue" },
+--capabilities = capabilities,
+--})
 
 -- module css server
 nvim_lsp.cssmodules_ls.setup({
 	on_attach = on_attach,
 	cmd = { "cssmodules-language-server" },
 	filetypes = { "javascript", "javascriptreact", "typescript", "typescriptreact" },
+	capabilities = capabilities,
+})
+
+-- normal css server
+nvim_lsp.cssls.setup({
+	on_attach = on_attach,
+	cmd = { "vscode-css-language-server", "--stdio" },
+	filetypes = { "css", "scss", "less" },
 	capabilities = capabilities,
 })
 
