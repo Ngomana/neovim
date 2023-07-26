@@ -103,21 +103,75 @@ nvim_lsp.rust_analyzer.setup({
 	capabilities = capabilities,
 })
 
--- sql langauge server
---nvim_lsp.sqlls.setup({
---on_attach = on_attach,
---cmd = { "sql-language-server", "up", "--method", "stdio" },
---filetypes = { "sql", "mysql" },
---capabilities = capabilities,
---})
-
--- vue langauge server
---nvim_lsp.vuels.setup({
---on_attach = on_attach,
---cmd = { "vls" },
---filetypes = { "vue" },
---capabilities = capabilities,
---})
+-- tailwind css langauge server
+nvim_lsp.tailwindcss.setup({
+	on_attach = on_attach,
+	cmd = { "tailwindcss-language-server", "--stdio" },
+	filetypes = {
+		"aspnetcorerazor",
+		"astro",
+		"astro-markdown",
+		"blade",
+		"clojure",
+		"django-html",
+		"htmldjango",
+		"edge",
+		"eelixir",
+		"elixir",
+		"ejs",
+		"erb",
+		"eruby",
+		"gohtml",
+		"haml",
+		"handlebars",
+		"hbs",
+		"html",
+		"html-eex",
+		"heex",
+		"jade",
+		"leaf",
+		"liquid",
+		"markdown",
+		"mdx",
+		"mustache",
+		"njk",
+		"nunjucks",
+		"php",
+		"razor",
+		"slim",
+		"twig",
+		"css",
+		"less",
+		"postcss",
+		"sass",
+		"scss",
+		"stylus",
+		"sugarss",
+		"javascript",
+		"javascriptreact",
+		"reason",
+		"rescript",
+		"typescript",
+		"typescriptreact",
+		"vue",
+		"svelte",
+	},
+	settings = {
+		tailwindCSS = {
+			classAttributes = { "class", "className", "class:list", "classList", "ngClass" },
+			lint = {
+				cssConflict = "warning",
+				invalidApply = "error",
+				invalidConfigPath = "error",
+				invalidScreen = "error",
+				invalidTailwindDirective = "error",
+				invalidVariant = "error",
+				recommendedVariantOrder = "warning",
+			},
+			validate = true,
+		},
+	},
+})
 
 -- module css server
 nvim_lsp.cssmodules_ls.setup({
